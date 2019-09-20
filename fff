@@ -1,5 +1,5 @@
 from graph import *
-
+import math as m
 penSize(1)
 penColor(0,0,0)
 brushColor(16,191,62)
@@ -47,10 +47,18 @@ circle(260, 60, 30)
 circle(210, 45, 30)
 
 a=[]
+n = 30
+for i in range(n):
+      x = 50
+      y=50
+      if i%2 == 0:
+            a.append((x+30*m.cos(2*m.pi*i/n), y+30*m.sin(2*m.pi*i/n)))
+      else:
+            a.append((x+35*m.cos(2*m.pi*i/n), y+35*m.sin(2*m.pi*i/n)))
+brushColor(255, 247, 0) 
+polygon(a)
 
-for i in range(20):
-	
-	
+      
 
          
 run()
