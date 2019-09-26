@@ -1,3 +1,4 @@
+
 from graph import *
 import math as m
 
@@ -33,7 +34,17 @@ def cloud(a, x, y):
     circle(150*a+x, 53*a+y, 20*a)
     circle(134*a+x, 40*a+y, 20*a)
     circle(112*a+x, 40*a+y, 20*a)
-    
+def sun(x, y, r):
+    a=[]
+    n = 30
+    for i in range(n):
+      if i%2 == 0:
+            a.append((x+r*m.cos(2*m.pi*i/n), y+r*m.sin(2*m.pi*i/n)))
+      else:
+            a.append((x+(r+5)*m.cos(2*m.pi*i/n), y+(r+5)*m.sin(2*m.pi*i/n)))
+    brushColor(249,194,194)
+    polygon(a)
+ 
 penSize(1)
 penColor(0,0,0)
 brushColor(16,191,62)
@@ -48,23 +59,10 @@ brushColor(255, 255, 255)
 cloud(1,50,0)
 cloud(0.7, 180, 60)
 cloud(1, 250, 10)
-
-a=[]
-n = 30
-for i in range(n):
-      x = 50
-      y=50
-      if i%2 == 0:
-            a.append((x+30*m.cos(2*m.pi*i/n), y+30*m.sin(2*m.pi*i/n)))
-      else:
-            a.append((x+35*m.cos(2*m.pi*i/n), y+35*m.sin(2*m.pi*i/n)))
-brushColor(249,194,194)
-polygon(a)
-
+sun(50, 50, 30)
 
 
 
 run()
-
 
 
