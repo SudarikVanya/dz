@@ -42,7 +42,6 @@ colors = ['red', 'orange', 'yellow', 'green', 'blue']
 g = 0.5  # ускорение свобдного падения
 ochki = 0
 
-# Задаем шарики
 
 
 def playsound():
@@ -95,9 +94,9 @@ class Putin(Figure):
         self.x += self.xv
         self.y += self.yv
         self.yv += g
+
+
 # Создаем шарики
-
-
 N = 10  # Коллчесво шариков
 a = []
 for i in range(N):
